@@ -2,7 +2,7 @@ public  class myCityWeatherClass {
     @AuraEnabled
     public static String myCityWeatherClass(String mycity) {
     String accountCity=mycity;
-    String apikey='5923f6fba018bb3fdd5128e72b7cb802';
+    String apikey=System.Label.apikeyopenweathermap;
     String requestEndPoint;
     String city;
     String temprature;

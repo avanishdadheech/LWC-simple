@@ -2,7 +2,7 @@ import { LightningElement } from 'lwc';
 import myCityWeatherClass from '@salesforce/apex/myCityWeatherClass.myCityWeatherClass';
 
 export default class MyWeatherUpdate extends LightningElement {
-    cardTitle = 'Latest Weather Information REST API WebService Callout v1.0';
+    cardTitle = 'Latest Weather Information REST API WebService Callout v1.1';
     temprature;
     city = 'Noida';
     connectedCallback() {
