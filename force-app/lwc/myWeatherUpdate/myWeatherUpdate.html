@@ -1,0 +1,10 @@
+<template>
+    <lightning-card title={cardTitle}>
+        <lightning-input type="text" label="City Name" value={city} onchange={onCityChange}>
+        </lightning-input>
+        <lightning-button label="Get Weather" onclick={getWeather}></lightning-button>
+
+        <br /> Current Temprature in {city} is : <div class=temprature> {temprature} </div>
+
+    </lightning-card>
+</template>
