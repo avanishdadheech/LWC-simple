@@ -1,5 +1,6 @@
 import { LightningElement, track } from 'lwc';
 import { createRecord } from "lightning/uiRecordApi";
+import { ShowToastEvent } from 'lightning/platformShowToastEvent';
 
 export default class AccountCreateLDS extends LightningElement {
     accountName;
@@ -34,8 +35,21 @@ export default class AccountCreateLDS extends LightningElement {
             this.accountWebsite = '';
             this.output_message = '-->   Account has been created successfully ID: ' + response.id;
             this.disableButton = true;
+
+            const toastEvent = new ShowToastEvent({
+                title: 'Accounts Created',
+                message: 'Account has been created successfully ID: ' + response.id,
+                variant: 'success',
+            });
+            this.dispatchEvent(toastEvent);
         }).catch(error => {
             console.error('Error in creating account : ', error.body.message);
+            const toastEvent = new ShowToastEvent({
+                title: 'ERROR',
+                message: error.body.message,
+                variant: 'error',
+            });
+            this.dispatchEvent(toastEvent);
         });
     }
 
